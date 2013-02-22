@@ -90,8 +90,10 @@
 		// TODO: This is hacky. Not sure why 8 is the magic number
 		if (self.contentInset.left == 0.0f) {
 			rect.origin.x += 8.0f;
+			rect.size.width -= 8.0f;
 		}
 		rect.origin.y += 8.0f;
+		rect.size.height -= 8.0f;
 		
 		// Draw the text
 		[_placeholderTextColor set];
