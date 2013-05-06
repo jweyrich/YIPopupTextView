@@ -236,7 +236,12 @@ typedef enum {
         if (maxCount > 0) {
             _countLabel = [[UILabel alloc] initWithFrame:CGRectZero];
             _countLabel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
+#if __IPHONE_OS_VERSION_MIN_REQUIRED >= __IPHONE_6_0
+            _countLabel.textAlignment = NSTextAlignmentRight;
+#else
             _countLabel.textAlignment = UITextAlignmentRight;
+#endif
+
             _countLabel.backgroundColor = [UIColor clearColor];
             _countLabel.textColor = [UIColor lightGrayColor];
             _countLabel.font = [UIFont boldSystemFontOfSize:COUNT_SIZE];
